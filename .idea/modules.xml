@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DEX.iml" filepath="$PROJECT_DIR$/DEX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BlockChain.iml" filepath="$PROJECT_DIR$/BlockChain.iml" />
     </modules>
   </component>
 </project>
