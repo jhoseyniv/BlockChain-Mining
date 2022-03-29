@@ -54,7 +54,7 @@ public class BolckChainImpl {
 
         assertTrue(isChainValid());
         System.out.println("Chain is Valid....");
-//      assertTrue(newBlock.getHash().substring(0, prefix).equals(prefixString));
+    //  assertTrue(newBlock.getHash().substring(0, prefix).equals(prefixString));
     }
     public  Boolean isChainValid() {
         Block currentBlock;
@@ -63,6 +63,7 @@ public class BolckChainImpl {
             currentBlock = blockchain.get(i);
             previousBlock = blockchain.get(i-1);
             if(!currentBlock.getHash().equals(currentBlock.calculateBlockHash()) ){
+                System.out.println("Current Hashes not equal");
                 System.out.println("Current Hashes not equal");
                 return false;
             }
