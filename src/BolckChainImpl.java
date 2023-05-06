@@ -9,8 +9,8 @@ import static org.junit.Assert.assertTrue;
 public class BolckChainImpl {
     List<Block> blockchain = new ArrayList<>();
     List<Long> timeOfMining = new ArrayList<Long>();
-    public static int difficulty = 5;
-    String difficultyString = new String(new char[difficulty]).replace('\0', '0');
+    public static int difficulty = 7;
+    //String difficultyString = new String(new char[difficulty]).replace('\0', '0');
 
 
 
@@ -35,26 +35,33 @@ public class BolckChainImpl {
         long endTime2=new Date().getTime();
         timeOfMining.add(endTime2-startTime2);
 
+        System.out.println("Minig Time is : " + (endTime2 - startTime2) + " mili seconds");
+
         Block block_3 = new Block(block_2.getHash(),"Block 3");
         blockchain.add(block_3);
+
+
         System.out.println("Trying to Mine block 3... ");
         long startTime3=new Date().getTime();
         block_3.mineBlock(difficulty);
         long endTime3=new Date().getTime();
         timeOfMining.add(endTime3- startTime3);
+        System.out.println("Minig Time is : " + (endTime3 - startTime3) + " mili seconds");
 
         Block block_4 = new Block(block_3.getHash(),"Block 4");
         blockchain.add(block_4);
-        System.out.println("Trying to Mine block 4... ");
 
+
+        System.out.println("Trying to Mine block 4... ");
         long startTime4=new Date().getTime();
         block_4.mineBlock(difficulty);
         long endTime4=new Date().getTime();
         timeOfMining.add(endTime4- startTime4);
+        System.out.println("Minig Time is : " + (endTime4 - startTime4) + " mili seconds");
 
         assertTrue(isChainValid());
         System.out.println("Chain is Valid....");
-    //  assertTrue(newBlock.getHash().substring(0, prefix).equals(prefixString));
+        //  assertTrue(newBlock.getHash().substring(0, prefix).equals(prefixString));
     }
     public  Boolean isChainValid() {
         Block currentBlock;
